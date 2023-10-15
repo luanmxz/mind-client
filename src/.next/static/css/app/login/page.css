@@ -22,6 +22,7 @@
     border-radius: 10px;
     border: 3px black solid;
     color: black;
+    font-size: x-large;
 }
 /*!*****************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** css ../node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[7].use[2]!../node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[7].use[3]!./app/login/login-page.module.css ***!
@@ -35,25 +36,19 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-}
-
-.login-page_mindAppHeader__TDt5c {
-    position: absolute;
-    color: black;
-    top: 30px;
-    left: 30px;
+    justify-items: auto;
 }
 
 .login-page_loginPageTitle__haXAH {
     color: black;
-    font-size: xx-large;
+    font-size: 4rem;
+    margin: 25px;
 }
 
 .login-page_loginForm__k75ys {
-    position: relative;
-    height: 400px;
-    width: 600px;
-    border-radius: 15px;
+    width: 100%;
+    max-width: 500px;
+    min-height: 120px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -64,7 +59,7 @@
     position: relative;
     display: flex;
     align-items: center;
-    width: inherit
+    width: inherit;
   }
   
 .login-page_showHideButton___XqCS {
@@ -75,6 +70,23 @@
     padding: 2px;
   }
 
+.login-page_loginButtons__GSrQV {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.login-page_loginButtons__GSrQV h3 {
+    color: black;
+    margin: 10px;
+}
+
+.login-page_loginButtons__GSrQV button:last-child {
+    margin-top: 0;
+}
+
 .login-page_signInButton__3mjW2 {
     width: 100%;
     padding: 20px 60px;
@@ -84,3 +96,12 @@
     font-size: x-large;
     margin-top: 30px;
 }
+
+.login-page_otherOptions__QrHjz h3 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    margin: 10px;
+}
+

@@ -6,17 +6,23 @@ import { useState } from 'react';
 
 const LoginPage = () => {
 	function handleSubmit(e: any) {
+		console.log(e);
+		const email = e.target.elements[0].value;
+		const password = e.target.elements[1].value;
 		e.preventDefault();
+		fetch('http://localhost:3333/auth/signIn', {
+			method: 'POST',
+			headers: {
+				'Content-Type': 'application/json',
+			},
+			body: JSON.stringify({ email, password }),
+		});
 	}
 
 	const [visible, setVisible] = useState(false);
 
 	return (
 		<div className={styles.loginPage}>
-			<div className={styles.mindAppHeader}>
-				<h2>Mind.</h2>
-			</div>
-
 			<h1 className={styles.loginPageTitle}>Sign in to Mind</h1>
 
 			<form className={styles.loginForm} onSubmit={handleSubmit}>
@@ -34,7 +40,18 @@ const LoginPage = () => {
 					</button>
 				</div>
 
-				<button className={styles.signInButton}>Log in</button>
+				<div className={styles.loginButtons}>
+					<button className={styles.signInButton}>Log in</button>
+
+					<h3>or</h3>
+
+					<button className={styles.signInButton}>Continue with Google</button>
+				</div>
+
+				<div className={styles.otherOptions}>
+					<h3>Forgot password?</h3>
+					<h3>First time here? Create account</h3>
+				</div>
 			</form>
 		</div>
 	);

@@ -7,25 +7,19 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-}
-
-.mindAppHeader {
-    position: absolute;
-    color: black;
-    top: 30px;
-    left: 30px;
+    justify-items: auto;
 }
 
 .loginPageTitle {
     color: black;
-    font-size: xx-large;
+    font-size: 4rem;
+    margin: 25px;
 }
 
 .loginForm {
-    position: relative;
-    height: 400px;
-    width: 600px;
-    border-radius: 15px;
+    width: 100%;
+    max-width: 500px;
+    min-height: 120px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -36,7 +30,7 @@
     position: relative;
     display: flex;
     align-items: center;
-    width: inherit
+    width: inherit;
   }
   
 .showHideButton {
@@ -47,6 +41,23 @@
     padding: 2px;
   }
 
+.loginButtons {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.loginButtons h3 {
+    color: black;
+    margin: 10px;
+}
+
+.loginButtons button:last-child {
+    margin-top: 0;
+}
+
 .signInButton {
     width: 100%;
     padding: 20px 60px;
@@ -55,4 +66,12 @@
     background-color: black;
     font-size: x-large;
     margin-top: 30px;
+}
+
+.otherOptions h3 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    margin: 10px;
 }
