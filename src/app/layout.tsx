@@ -1,4 +1,5 @@
 import './globals.css';
+import { Metadata } from 'next';
 import { Poppins } from 'next/font/google';
 
 const poppins = Poppins({
@@ -7,6 +8,11 @@ const poppins = Poppins({
 	weight: ['400', '500', '600'],
 	variable: '--font-poppins',
 });
+
+export const metadata: Metadata = {
+	title: 'Mind - Organize yourself',
+	description: 'Your personal organizer',
+};
 
 export default function RootLayout({
 	children,
