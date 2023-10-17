@@ -1,13 +1,12 @@
 import './globals.css';
-import type { Metadata } from 'next';
-import { Young_Serif } from 'next/font/google';
+import { Poppins } from 'next/font/google';
 
-const youngSerif = Young_Serif({ weight: ['400'], subsets: ['latin'] });
-
-export const metadata: Metadata = {
-	title: 'Mind - Organize yourself',
-	description: 'Your secundary mind helping you to organize your life',
-};
+const poppins = Poppins({
+	subsets: ['latin'],
+	display: 'swap',
+	weight: ['400', '500', '600'],
+	variable: '--font-poppins',
+});
 
 export default function RootLayout({
 	children,
@@ -15,11 +14,11 @@ export default function RootLayout({
 	children: React.ReactNode;
 }) {
 	return (
-		<html lang='en'>
-			<body className={youngSerif.className}>
-				<main className='flex min-h-screen flex-col items-center justify-between'>
-					{children}
-				</main>
+		<html lang='en' suppressHydrationWarning>
+			<head />
+			<body
+				className={`${poppins.variable} font-poppins min-h-screen bg-background antialiased`}>
+				<main>{children}</main>
 			</body>
 		</html>
 	);
