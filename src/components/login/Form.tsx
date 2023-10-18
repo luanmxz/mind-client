@@ -11,8 +11,8 @@ import {
 	FormLabel,
 	FormMessage,
 } from '../ui/form';
-import { Button } from '../ui/button';
-import { Input } from '../ui/input';
+import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
 
 const formSchema = z.object({
 	email: z.string().email({ message: 'Please input a valid email.' }),
