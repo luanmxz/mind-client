@@ -8,7 +8,6 @@ import {
 	FormControl,
 	FormField,
 	FormItem,
-	FormLabel,
 	FormMessage,
 } from '../ui/form';
 import { Button } from '@/components/ui/button';
@@ -87,13 +86,18 @@ const LoginForm = () => {
 							</FormItem>
 						)}
 					/>
-					<Button type='submit' className='text-3xl py-10 w-full'>
+					<Button
+						type='submit'
+						variant='secondary'
+						className='text-3xl py-10 w-full rounded-lg'>
 						Login
 					</Button>
 
 					<p>or</p>
 
-					<Button className='text-3xl py-10 w-full'>
+					<Button
+						variant='secondary'
+						className='text-3xl py-10 w-full rounded-lg'>
 						Continue with Google
 					</Button>
 				</form>
