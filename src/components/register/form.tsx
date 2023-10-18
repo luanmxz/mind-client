@@ -14,17 +14,20 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import formSchema from './formSchema';
 
-const LoginForm = () => {
+const RegisterForm = () => {
 	const form = useForm<z.infer<typeof formSchema>>({
 		resolver: zodResolver(formSchema),
 		defaultValues: {
+			username: '',
 			email: '',
 			password: '',
+			confirmPassword: '',
 		},
 	});
 
 	const onSubmit = (values: z.infer<typeof formSchema>) => {
 		//TODO call api to login
+
 		console.log(values);
 	};
 
@@ -33,7 +36,24 @@ const LoginForm = () => {
 			<Form {...form}>
 				<form
 					onSubmit={form.handleSubmit(onSubmit)}
-					className='space-y-5 flex flex-col pt-12 w-1/5 min-w-max'>
+					className='space-y-4 flex flex-col pt-12 w-1/5 min-w-max'>
+					<FormField
+						control={form.control}
+						name='username'
+						render={({ field }) => (
+							<FormItem>
+								<FormControl>
+									<Input
+										placeholder='Username'
+										{...field}
+										className='text-2xl py-8 w-full border-slate-700'
+									/>
+								</FormControl>
+								<FormMessage className='pl-1 text-start' />
+							</FormItem>
+						)}
+					/>
+
 					<FormField
 						control={form.control}
 						name='email'
@@ -68,11 +88,30 @@ const LoginForm = () => {
 							</FormItem>
 						)}
 					/>
+
+					<FormField
+						control={form.control}
+						name='confirmPassword'
+						render={({ field }) => (
+							<FormItem>
+								<FormControl>
+									<Input
+										type='password'
+										placeholder='Confirm your password'
+										{...field}
+										className='text-2xl py-8 w-full border-slate-700'
+									/>
+								</FormControl>
+								<FormMessage className='pl-1 text-start' />
+							</FormItem>
+						)}
+					/>
+
 					<Button
 						type='submit'
 						variant='secondary'
-						className='text-3xl py-10 w-full rounded-lg'>
-						Login
+						className='text-3xl py-10 w-full rounded-lg '>
+						Sign up
 					</Button>
 
 					<p>or</p>
@@ -88,4 +127,4 @@ const LoginForm = () => {
 	);
 };
 
-export default LoginForm;
+export default RegisterForm;
