@@ -23,7 +23,7 @@ export default function RootLayout({
 		<html lang='en' suppressHydrationWarning>
 			<head />
 			<body
-				className={`${poppins.variable} font-poppins min-h-screen bg-background antialiased`}>
+				className={`${poppins.variable} font-poppins min-h-screen bg-background antialiased overflow-hidden`}>
 				<main>{children}</main>
 			</body>
 		</html>
