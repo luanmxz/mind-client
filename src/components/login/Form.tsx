@@ -88,7 +88,7 @@ const LoginForm = () => {
 						)}
 					/>
 					<Button type='submit' className='text-3xl py-10 w-full'>
-						Submit
+						Login
 					</Button>
 
 					<p>or</p>
