@@ -37,6 +37,14 @@ const RegisterForm = () => {
 				<form
 					onSubmit={form.handleSubmit(onSubmit)}
 					className='space-y-4 flex flex-col pt-12 w-1/5 min-w-max'>
+					<Button
+						variant='outline'
+						className='text-3xl py-10 w-full rounded-lg'>
+						Continue with Google
+					</Button>
+
+					<p className='text-md text-gray-500 py-2'>or</p>
+
 					<FormField
 						control={form.control}
 						name='username'
@@ -112,14 +120,6 @@ const RegisterForm = () => {
 						variant='secondary'
 						className='text-3xl py-10 w-full rounded-lg '>
 						Sign up
-					</Button>
-
-					<p>or</p>
-
-					<Button
-						variant='secondary'
-						className='text-3xl py-10 w-full rounded-lg'>
-						Continue with Google
 					</Button>
 				</form>
 			</Form>
