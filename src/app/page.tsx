@@ -1,3 +1,12 @@
+'use client';
+
+import { Button } from '@/components/ui/button';
+import { permanentRedirect, redirect } from 'next/navigation';
+
 export default function Home() {
-	return <h1 className='p-10 text-red-800 text-9xl'> teste </h1>;
+	return (
+		<>
+			<Button onClick={() => permanentRedirect('/login')}>Redirect GO</Button>
+		</>
+	);
 }

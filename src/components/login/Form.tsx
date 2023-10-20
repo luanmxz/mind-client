@@ -15,8 +15,11 @@ import { Input } from '@/components/ui/input';
 import formSchema from './formSchema';
 import { User } from '@/models/User';
 import { Session } from '@/models/Session';
+import { useRouter } from 'next/navigation';
 
 const LoginForm = () => {
+	const router = useRouter();
+
 	const form = useForm<z.infer<typeof formSchema>>({
 		resolver: zodResolver(formSchema),
 		defaultValues: {
@@ -34,11 +37,18 @@ const LoginForm = () => {
 			body: JSON.stringify(values),
 		});
 
-		const data: { user: User; session: Session } = await resp.then((data) =>
-			data.json()
-		);
+		const data: { user: User | null; session: Session | null } =
+			await resp.then((data) => data.json());
 
-		window.sessionStorage.setItem('token', data.session.access_token);
+		if (data.session) {
+			window.sessionStorage.setItem('token', data.session.access_token);
+			router.push('/dashboard');
+		} else {
+			form.setError('password', {
+				message: 'Email or password is incorrect.',
+				type: '400',
+			});
+		}
 	};
 
 	return (
@@ -62,12 +72,13 @@ const LoginForm = () => {
 							<FormItem>
 								<FormControl>
 									<Input
+										autoComplete='email'
 										placeholder='Email'
 										{...field}
 										className='text-2xl py-8 w-full border-slate-700'
 									/>
 								</FormControl>
-								<FormMessage className='pl-1 text-start' />
+								<FormMessage className='pl-2 text-start text-base' />
 							</FormItem>
 						)}
 					/>
@@ -79,13 +90,14 @@ const LoginForm = () => {
 							<FormItem>
 								<FormControl>
 									<Input
+										autoComplete='current-password'
 										type='password'
 										placeholder='Password'
 										{...field}
 										className='text-2xl py-8 w-full  border-slate-700'
 									/>
 								</FormControl>
-								<FormMessage className='pl-1 text-start' />
+								<FormMessage className='pl-2 text-start text-base' />
 							</FormItem>
 						)}
 					/>
