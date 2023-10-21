@@ -25,6 +25,8 @@
       "@/*": ["./*"],
       "@/components/*": ["./components/*"],
       "@/lib/*": ["./lib/*"],
+      "@/operations/*": ["./operations/*"],
+      "@/public/*": ["../public/*"],
     }
   },
   "include": [

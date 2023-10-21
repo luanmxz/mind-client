@@ -29,21 +29,29 @@ const LoginForm = () => {
 	});
 
 	const onSubmit = async (values: z.infer<typeof formSchema>) => {
-		const resp = fetch('http://localhost:3333/auth/signIn', {
-			method: 'POST',
-			headers: {
-				'content-type': 'application/json',
-			},
-			body: JSON.stringify(values),
-		});
+		try {
+			const resp = fetch('http://localhost:3333/auth/signIn', {
+				method: 'POST',
+				headers: {
+					'content-type': 'application/json',
+				},
+				body: JSON.stringify(values),
+			});
 
-		const data: { user: User | null; session: Session | null } =
-			await resp.then((data) => data.json());
+			const data: { user: User | null; session: Session | null } =
+				await resp.then((data) => data.json());
 
-		if (data.session) {
-			window.sessionStorage.setItem('token', data.session.access_token);
-			router.push('/dashboard');
-		} else {
+			const { email, id, user_metadata } = data.user;
+
+			if (data.session.access_token) {
+				window.sessionStorage.setItem('token', data.session.access_token);
+				window.sessionStorage.setItem(
+					'user',
+					JSON.stringify({ email, id, user_metadata })
+				);
+				router.push('/dashboard');
+			}
+		} catch (error: any) {
 			form.setError('password', {
 				message: 'Email or password is incorrect.',
 				type: '400',
