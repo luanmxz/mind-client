@@ -6,10 +6,7 @@ import { icons } from '@/public/svg/svg';
 const DashboardSidebar = () => {
 	return (
 		<>
-			<div
-				className={cn(
-					'pb-12 bg-primary-foreground rounded-tr-3xl rounded-br-3xl text-primary'
-				)}>
+			<div className={cn('bg-primary-foreground text-primary')}>
 				<div className='space-y-4 py-4  border-gray-900'>
 					<div className='px-3 py-2'>
 						<h2 className='mb-2 px-4 text-lg font-semibold tracking-tight'>

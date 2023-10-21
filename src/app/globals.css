@@ -17,8 +17,10 @@
     --primary-foreground: #F5F7F8;
  
     --secondary: rgb(85,81,255);
+    --secondary-darken:rgb(78, 72, 244);
+    --secondary-lighter: rgb(126, 124, 248);
     --secondary-foreground: #F5F7F8;
- 
+
     --muted: 220 14.3% 95.9%;
     --muted-foreground: 220 8.9% 46.1%;
  
