@@ -5,6 +5,7 @@ import settingsIcon from './settings.svg';
 import shelterIcon from './shelter.svg';
 import notesIcon from './note.svg';
 import workspacesIcon from './workspaces.svg';
+import mindIcon from './mind.svg';
 
 export const icons = {
     cardsIcon,
@@ -13,5 +14,6 @@ export const icons = {
     settingsIcon,
     shelterIcon,
     notesIcon,
-    workspacesIcon
+    workspacesIcon,
+    mindIcon
 }

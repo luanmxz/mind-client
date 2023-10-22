@@ -1,12 +1,19 @@
+'use client';
+
 import Link from 'next/link';
 
 import { cn } from '@/lib/utils';
 import { Button } from '../ui/button';
+import MindIcon from '../shared/mindIcon';
 
 export function MainNav({
 	className,
+	toggleDashboardSidemenu,
 	...props
-}: React.HTMLAttributes<HTMLElement>) {
+}: {
+	className?: string;
+	toggleDashboardSidemenu: () => void;
+} & React.HTMLAttributes<HTMLElement>) {
 	return (
 		<nav
 			className={cn(
@@ -14,7 +21,9 @@ export function MainNav({
 				className
 			)}
 			{...props}>
-			<Button>Icon</Button>
+			<Button onClick={toggleDashboardSidemenu}>
+				<MindIcon fill='white' />
+			</Button>
 			<Link
 				href='/'
 				className='font-bold text-2xl transition-colors hover:text-primary'>
