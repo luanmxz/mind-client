@@ -9,7 +9,7 @@ import {
 
 const CardColumn = () => {
 	return (
-		<div className='flex flex-col gap-4 bg-secondary-lighter px-4 rounded-sm h-4/5 shadow-lg shadow-slate-400'>
+		<div className='flex flex-col gap-4 bg-secondary-lighter mr-2 p-4 rounded-sm h-max shadow-sm shadow-slate-400'>
 			<h1 className='text-primary-foreground pt-3 text-xl'>Column name 1</h1>
 			<Card className='h-fit min-w-fit w-72'>
 				<CardHeader>

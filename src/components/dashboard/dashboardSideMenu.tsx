@@ -3,11 +3,15 @@ import { Button } from '../ui/button';
 import { cn } from '@/lib/utils';
 import { icons } from '@/public/svg/svg';
 
-const DashboardSidebar = () => {
+const DashboardSideMenu = ({ className }: { className?: string }) => {
 	return (
 		<>
-			<div className={cn('bg-primary-foreground text-primary')}>
-				<div className='space-y-4 py-4  border-gray-900'>
+			<div
+				className={cn(
+					'bg-primary-foreground text-primary shadow-lg shadow-gray-400',
+					className
+				)}>
+				<div className='space-y-4 py-4 mt-1  border-gray-900'>
 					<div className='px-3 py-2'>
 						<h2 className='mb-2 px-4 text-lg font-semibold tracking-tight'>
 							Workspaces
@@ -105,4 +109,4 @@ const DashboardSidebar = () => {
 	);
 };
 
-export default DashboardSidebar;
+export default DashboardSideMenu;

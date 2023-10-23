@@ -5,14 +5,14 @@ const Dashboard = async () => {
 	const user = await getUser();
 
 	return (
-		<>
-			<h1 className='py-10 font-bold text-xl'>MIND PROJECT</h1>
-			<div className='flex flex-row gap-10 pb-8 h-full'>
+		<div className='h-full px-4 lg:px-6'>
+			<h1 className='py-8 font-bold text-xl'>MIND PROJECT</h1>
+			<div className='flex flex-row gap-6'>
 				<CardColumn />
 				<CardColumn />
 				<CardColumn />
 			</div>
-		</>
+		</div>
 	);
 };
 

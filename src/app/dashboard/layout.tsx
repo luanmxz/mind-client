@@ -1,12 +1,11 @@
 'use client';
 
-import { Avatar, AvatarFallback } from '@/components/ui/avatar';
-import { MainNav } from '@/components/dashboard/mainNav';
-import { Search } from '@/components/ui/search';
-import { Button } from '@/components/ui/button';
-import DashboardSidebar from '@/components/dashboard/sidebar';
+import { DashboardNav } from '@/components/dashboard/DashboardNav';
+import DashboardSideMenu from '@/components/dashboard/dashboardSideMenu';
 import { useState } from 'react';
 import { cn } from '@/lib/utils';
+import MindIcon from '@/components/shared/mindIcon';
+import { Button } from '@/components/ui/button';
 
 export default function DashboardLayout({
 	children,
@@ -20,38 +19,25 @@ export default function DashboardLayout({
 	};
 
 	return (
-		<>
-			<div>
-				<div className='hidden flex-col md:flex'>
-					<div className='border-b'>
-						<div className='flex h-16 items-center px-4'>
-							<MainNav
-								className='mx-3'
-								toggleDashboardSidemenu={toggleDashboardSidemenu}
-							/>
-							<div className='ml-auto flex items-center space-x-6'>
-								<Button variant='outline'>Create</Button>
-								<Search />
-							</div>
-							<Avatar className='mx-4'>
-								<AvatarFallback className='bg-secondary text-primary-foreground'>
-									LM
-								</AvatarFallback>
-							</Avatar>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div className='grid lg:grid-cols-6 h-screen'>
-				{isDashboardSidemenuVisible && <DashboardSidebar />}
+		<div className='h-screen w-screen'>
+			<DashboardNav
+				className='mx-3'
+				toggleDashboardSidemenu={toggleDashboardSidemenu}
+			/>
+			<div className='flex flex-col lg:grid lg:grid-cols-6 h-full'>
+				<DashboardSideMenu
+					className={cn(
+						isDashboardSidemenuVisible ? 'fixed flex md:relative' : 'hidden'
+					)}
+				/>
 				<div
 					className={cn(
-						isDashboardSidemenuVisible ? 'col-start-2' : 'col-start-1',
-						'col-end-7 px-16 bg-slate-100 flex flex-col shadow-gray-300 shadow-md'
+						isDashboardSidemenuVisible ? 'lg:col-start-2' : 'lg:col-start-1',
+						'h-full mt-0 overflow-x-auto bg-slate-100 flex flex-col shadow-gray-300 lg:col-end-7 lg:overflow-y-hidden pb-6 lg:mt-0'
 					)}>
 					{children}
 				</div>
 			</div>
-		</>
+		</div>
 	);
 }
