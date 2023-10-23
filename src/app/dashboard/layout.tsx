@@ -31,7 +31,7 @@ export default function DashboardLayout({
 				<div
 					className={cn(
 						isDashboardSidemenuVisible ? 'lg:col-start-2' : 'lg:col-start-1',
-						'h-full mt-0 overflow-x-auto bg-slate-100 flex flex-col shadow-gray-300 lg:col-end-7 lg:overflow-y-hidden pb-6 lg:mt-0'
+						'h-full mt-0 overflow-x-auto px-4 bg-slate-100 flex flex-col shadow-gray-300 lg:col-end-7 lg:overflow-y-hidden pb-6 lg:mt-0'
 					)}>
 					{children}
 				</div>
