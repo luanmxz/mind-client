@@ -4,8 +4,6 @@ import { DashboardNav } from '@/components/dashboard/DashboardNav';
 import DashboardSideMenu from '@/components/dashboard/dashboardSideMenu';
 import { useState } from 'react';
 import { cn } from '@/lib/utils';
-import MindIcon from '@/components/shared/mindIcon';
-import { Button } from '@/components/ui/button';
 
 export default function DashboardLayout({
 	children,
