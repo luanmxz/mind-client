@@ -9,7 +9,7 @@ const Card = React.forwardRef<
 	<div
 		ref={ref}
 		className={cn(
-			'rounded-none border border-l-4 bg-stone-50 text-card-foreground shadow-md',
+			'w-64 md:w-72 rounded-none border border-l-4 bg-stone-50 text-card-foreground shadow-md',
 			className
 		)}
 		{...props}
@@ -23,7 +23,10 @@ const CardHeader = React.forwardRef<
 >(({ className, ...props }, ref) => (
 	<div
 		ref={ref}
-		className={cn('flex flex-col space-y-1.5 p-6', className)}
+		className={cn(
+			'flex flex-col space-y-1.5 p-2 md:space-y-1.5 md:p-5',
+			className
+		)}
 		{...props}
 	/>
 ));
@@ -70,7 +73,7 @@ const CardFooter = React.forwardRef<
 >(({ className, ...props }, ref) => (
 	<div
 		ref={ref}
-		className={cn('flex text-sm items-center p-6 pt-0', className)}
+		className={cn('flex text-sm items-center p-6 pt-0 pl-2 md:pl-5', className)}
 		{...props}
 	/>
 ));
