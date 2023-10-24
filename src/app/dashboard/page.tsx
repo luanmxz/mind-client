@@ -4,6 +4,7 @@ import FilterIcon from '@/components/shared/filterIcon';
 import LockIcon from '@/components/shared/lockIcon';
 import ShareIcon from '@/components/shared/shareIcon';
 import { Button } from '@/components/ui/button';
+import { Search } from '@/components/ui/search';
 import getUser from '@/operations/getUserLogged';
 
 const Dashboard = async () => {
