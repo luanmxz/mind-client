@@ -11,7 +11,7 @@ const DashboardSideMenu = ({ className }: { className?: string }) => {
 					'bg-primary-foreground text-primary shadow-lg shadow-gray-400',
 					className
 				)}>
-				<div className='space-y-4 py-4 mt-1  border-gray-900'>
+				<div className='space-y-4 py-4 mt-1 w-full  border-gray-900'>
 					<div className='px-3 py-2'>
 						<h2 className='mb-2 px-4 text-lg font-semibold tracking-tight'>
 							Workspaces
@@ -75,6 +75,37 @@ const DashboardSideMenu = ({ className }: { className?: string }) => {
 					<div className='px-3 py-2'>
 						<h2 className='mb-2 px-4 relative  text-lg font-semibold tracking-tight'>
 							Shelter
+						</h2>
+						<div className='space-y-1'>
+							<Button
+								variant='ghost'
+								className='w-full justify-start hover:text-secondary hover:font-bold'>
+								<Image
+									src={icons.lockIcon}
+									alt='Lock icon'
+									width={20}
+									height={20}
+									className='pr-1'
+								/>
+								Passwords
+							</Button>
+							<Button
+								variant='ghost'
+								className='w-full justify-start pl-5 hover:text-secondary hover:font-bold'>
+								<Image
+									src={icons.workspacesIcon}
+									alt='Lock icon'
+									width={20}
+									height={20}
+									className='pr-1'
+								/>
+								By workspaces
+							</Button>
+						</div>
+					</div>
+					<div className='px-3 py-2'>
+						<h2 className='mb-2 px-4 relative  text-lg font-semibold tracking-tight'>
+							Calendar
 						</h2>
 						<div className='space-y-1'>
 							<Button

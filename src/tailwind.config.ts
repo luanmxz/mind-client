@@ -21,7 +21,10 @@ module.exports = {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
-        background: "var(--background)",
+        background: {
+          DEFAULT: "var(--background)",
+          secondary: "var(--background-secondary)",
+        },
         foreground: "var(--foreground)",
         primary: {
           DEFAULT: "var(--primary)",
@@ -52,6 +55,7 @@ module.exports = {
         card: {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
+          column: "var(--card-column)",
         },
       },
       fontFamily: {

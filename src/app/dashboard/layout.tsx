@@ -22,17 +22,27 @@ export default function DashboardLayout({
 				className='mx-3'
 				toggleDashboardSidemenu={toggleDashboardSidemenu}
 			/>
-			<div className='flex flex-col lg:grid lg:grid-cols-6 h-full'>
+			<div className='flex flex-col md:grid md:grid-cols-5 h-full'>
 				<DashboardSideMenu
 					className={cn(
-						isDashboardSidemenuVisible ? 'fixed flex md:relative' : 'hidden'
+						isDashboardSidemenuVisible
+							? 'fixed flex z-10 md:relative h-full md:col-start-1 md:col-end-3 lg:col-end-2'
+							: 'hidden'
 					)}
 				/>
 				<div
 					className={cn(
-						isDashboardSidemenuVisible ? 'lg:col-start-2' : 'lg:col-start-1',
-						'h-full mt-0 overflow-x-auto  bg-slate-100 flex flex-col shadow-gray-300 lg:col-end-7 lg:overflow-y-hidden pb-6 lg:mt-0'
+						isDashboardSidemenuVisible
+							? 'md:col-start-3 lg:col-start-2'
+							: 'md:col-start-1',
+						'h-full mt-0 overflow-x-auto bg-background flex flex-col shadow-gray-300 md:col-end-6 md:overflow-y-hidden pb-6 md:mt-0'
 					)}>
+					<div
+						className={cn(
+							isDashboardSidemenuVisible
+								? 'block fixed z-[5] h-full w-full  bg-gray-800 bg-opacity-40 md:hidden'
+								: 'hidden'
+						)}></div>
 					{children}
 				</div>
 			</div>

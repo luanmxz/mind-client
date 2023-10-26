@@ -11,7 +11,7 @@ import AddCircleIcon from '../shared/addCircleIcon';
 
 const CardColumn = () => {
 	return (
-		<div className='self-center md:self-baseline flex flex-col gap-4 mr-2 p-4 h-5/6 bg-slate-200 bg-opacity-50 items-center'>
+		<div className='self-center md:self-baseline flex flex-col gap-4 mr-2 p-4 h-5/6 bg-card-column items-center'>
 			<h1 className='text-primary pt-3 ml-1 text-xl self-start'>
 				Column name 1
 			</h1>

@@ -12,8 +12,8 @@ const Dashboard = async () => {
 
 	return (
 		<div className='h-full flex flex-col'>
-			<nav className='bg-primary-foreground border-b border-l px-6 flex flex-row items-center justify-between fixed w-full lg:relative'>
-				<h1 className='py-6 font-bold text-xl'>MIND PROJECT</h1>
+			<nav className='bg-background border-b border-l px-6 flex flex-row items-center justify-between fixed w-full md:relative'>
+				<h1 className='py-6 font-bold  text-md md:text-xl'>MIND PROJECT</h1>
 
 				<div className='flex flex-row cursor-pointer items-center gap-px'>
 					<Button
@@ -36,7 +36,7 @@ const Dashboard = async () => {
 					</Button>
 				</div>
 			</nav>
-			<div className='flex flex-row h-full mt-6 p-4 lg:px-6'>
+			<div className='overflow-y-auto bg-background flex flex-row h-full pt-6 p-4 lg:px-6'>
 				<CardColumn />
 				<CardColumn />
 				<CardColumn />

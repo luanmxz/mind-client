@@ -6,9 +6,11 @@
   :root {
     --background: #F5F7F8;
     --foreground: #001524;
+    --background-secondary: #f4f6f7;
 
     --card: 0 0% 100%;
     --card-foreground: 224 71.4% 4.1%;
+    --card-column: rgba(226, 232, 240, 0.565);
  
     --popover: 0 0% 100%;
     --popover-foreground: 224 71.4% 4.1%;
@@ -35,24 +37,30 @@
     --ring: 224 71.4% 4.1%;
  
     --radius: 0.5rem;
+  }
+
 
   }
  
   .dark {
-    --background: 224 71.4% 4.1%;
-    --foreground: 210 20% 98%;
+    --background: #0a0f12fd;
+    --foreground: #F5F7F8;
+    --background-secondary: #031726;
  
     --card: 224 71.4% 4.1%;
     --card-foreground: 210 20% 98%;
+    --card-column: rgba(78, 72, 244, 0.37);
  
     --popover: 224 71.4% 4.1%;
     --popover-foreground: 210 20% 98%;
  
-    --primary: 210 20% 98%;
-    --primary-foreground: 220.9 39.3% 11%;
+    --primary: #F5F7F8;
+    --primary-foreground: #001524;
  
-    --secondary: 215 27.9% 16.9%;
-    --secondary-foreground: 210 20% 98%;
+    --secondary: rgb(85,81,255);
+    --secondary-darken:rgb(78, 72, 244);
+    --secondary-lighter: rgb(126, 124, 248);
+    --secondary-foreground: #F5F7F8;
  
     --muted: 215 27.9% 16.9%;
     --muted-foreground: 217.9 10.6% 64.9%;
@@ -67,7 +75,7 @@
     --input: 215 27.9% 16.9%;
     --ring: 216 12.2% 83.9%;
   }
-}
+
  
 @layer base {
   * {
