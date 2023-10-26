@@ -1,12 +1,56 @@
-import CardColumn from '@/components/dashboard/cardColumn';
+import CardColumn, { CardProps } from '@/components/dashboard/cardColumn';
 import AddCircleIcon from '@/components/shared/addCircleIcon';
 import FilterIcon from '@/components/shared/filterIcon';
 import LockIcon from '@/components/shared/lockIcon';
 import ShareIcon from '@/components/shared/shareIcon';
 import { Button } from '@/components/ui/button';
-import { Search } from '@/components/ui/search';
 import getUser from '@/operations/getUserLogged';
 
+const cards1: CardProps[] = [
+	{
+		cardTitle: 'Card Title 1',
+		cardDescription: 'Card Description 1',
+		cardFooter: 'Card Footer 1',
+	},
+	{
+		cardTitle: 'Card Title 2',
+		cardDescription: 'Card Description 2',
+		cardFooter: 'Card Footer 2',
+	},
+];
+
+const cardsOverflow: CardProps[] = [
+	{
+		cardTitle: 'Card Title 1',
+		cardDescription: 'Card Description 1',
+		cardFooter: 'Card Footer 1',
+	},
+	{
+		cardTitle: 'Card Title 2',
+		cardDescription: 'Card Description 2',
+		cardFooter: 'Card Footer 2',
+	},
+	{
+		cardTitle: 'Card Title 1',
+		cardDescription: 'Card Description 1',
+		cardFooter: 'Card Footer 1',
+	},
+	{
+		cardTitle: 'Card Title 2',
+		cardDescription: 'Card Description 2',
+		cardFooter: 'Card Footer 2',
+	},
+	{
+		cardTitle: 'Card Title 1',
+		cardDescription: 'Card Description 1',
+		cardFooter: 'Card Footer 1',
+	},
+	{
+		cardTitle: 'Card Title 2',
+		cardDescription: 'Card Description 2',
+		cardFooter: 'Card Footer 2',
+	},
+];
 const Dashboard = async () => {
 	const user = await getUser();
 
@@ -36,16 +80,18 @@ const Dashboard = async () => {
 					</Button>
 				</div>
 			</nav>
-			<div className='overflow-y-auto bg-background flex flex-row h-full pt-6 p-4 lg:px-6'>
-				<CardColumn />
-				<CardColumn />
-				<CardColumn />
-				<Button
-					variant='outline'
-					className='fixed bottom-4 right-5 h-fit w-fit hover:bg-transparent hover:scale-105 flex gap-2 hover:text-secondary'>
-					<AddCircleIcon />
-					Add list
-				</Button>
+			<div className='overflow-y-auto bg-background flex flex-row h-full pt-6 p-4 lg:px-6 items-start mt-2'>
+				<CardColumn cards={cardsOverflow} />
+				<CardColumn cards={cards1} />
+				<CardColumn cards={cards1} />
+				<div className='flex justify-center items-center p-4 pb-8 h-5/6 bg-card-column w-72 aspect-auto border-dashed border-2 border-gray-400'>
+					<Button
+						variant='ghost'
+						className='flex gap-1 mt-3 h-full w-full text-center text-slate-500 hover:bg-transparent hover:text-secondary'>
+						<AddCircleIcon height={42} width={42} />
+						Add new list
+					</Button>
+				</div>
 			</div>
 		</div>
 	);
