@@ -17,12 +17,12 @@ export default function DashboardLayout({
 	};
 
 	return (
-		<div className='h-screen w-screen'>
+		<div className='h-full w-full'>
 			<DashboardNav
 				className='mx-3'
 				toggleDashboardSidemenu={toggleDashboardSidemenu}
 			/>
-			<div className='flex flex-col md:grid md:grid-cols-[350px_minmax(0,_1fr)] h-full'>
+			<div className='flex flex-col md:grid md:grid-cols-[350px_1fr] h-full'>
 				<DashboardSideMenu
 					className={cn(
 						isDashboardSidemenuVisible
@@ -32,7 +32,10 @@ export default function DashboardLayout({
 				/>
 				<div
 					className={cn(
-						'h-full mt-0 overflow-x-auto bg-background flex flex-col shadow-gray-300  md:overflow-y-hidden pb-6 md:mt-0'
+						isDashboardSidemenuVisible
+							? 'md:col-start-2'
+							: 'md:col-start-1 md:col-end-3',
+						'h-full w-full mt-0 overflow-x-auto  bg-background flex flex-col shadow-gray-300  md:overflow-y-hidden pb-6 md:mt-0'
 					)}>
 					<div
 						className={cn(

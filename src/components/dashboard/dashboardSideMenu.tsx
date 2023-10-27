@@ -11,12 +11,12 @@ const DashboardSideMenu = ({ className }: { className?: string }) => {
 					'bg-primary-foreground text-primary shadow-lg shadow-gray-400',
 					className
 				)}>
-				<div className='space-y-4 py-4 mt-1 w-full  border-gray-900'>
+				<div className='space-y-[0.1rem] md:space-y-4 py-4 mt-1 w-full  border-gray-900'>
 					<div className='px-3 py-2'>
-						<h2 className='mb-2 px-4 text-lg font-semibold tracking-tight'>
+						<h2 className='mb-0 px-2 text-sm md:mb-2 md:px-4 md:text-lg font-semibold tracking-tight'>
 							Workspaces
 						</h2>
-						<div className='space-y-1'>
+						<div className='space-y-1 mt-1'>
 							<Button variant='outline' className='w-full justify-start pl-5'>
 								<Image
 									src={icons.workspacesIcon}
@@ -41,8 +41,8 @@ const DashboardSideMenu = ({ className }: { className?: string }) => {
 							</Button>
 						</div>
 					</div>
-					<div className='px-3 py-2'>
-						<h2 className='mb-2 px-4 text-lg font-semibold tracking-tight'>
+					<div className='py-0 px-3 md:py-2'>
+						<h2 className='mb-0 px-2 text-sm md:mb-2 md:px-4 md:text-lg font-semibold tracking-tight'>
 							Notes
 						</h2>
 						<div className='space-y-1'>
@@ -72,8 +72,8 @@ const DashboardSideMenu = ({ className }: { className?: string }) => {
 							</Button>
 						</div>
 					</div>
-					<div className='px-3 py-2'>
-						<h2 className='mb-2 px-4 relative  text-lg font-semibold tracking-tight'>
+					<div className='py-0 px-3 md:py-2'>
+						<h2 className='mb-0 px-2 text-sm md:mb-2 md:px-4 md:text-lg relative font-semibold tracking-tight'>
 							Shelter
 						</h2>
 						<div className='space-y-1'>
@@ -103,8 +103,8 @@ const DashboardSideMenu = ({ className }: { className?: string }) => {
 							</Button>
 						</div>
 					</div>
-					<div className='px-3 py-2'>
-						<h2 className='mb-2 px-4 relative  text-lg font-semibold tracking-tight'>
+					<div className='py-0 px-3 md:py-2'>
+						<h2 className='mb-0 px-2 text-sm md:mb-2 md:px-4 md:text-lg relative font-semibold tracking-tight'>
 							Calendar
 						</h2>
 						<div className='space-y-1'>

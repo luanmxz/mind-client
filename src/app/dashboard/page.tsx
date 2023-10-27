@@ -84,7 +84,7 @@ const Dashboard = async () => {
 				<CardColumn cards={cardsOverflow} />
 				<CardColumn cards={cards1} />
 				<CardColumn cards={cards1} />
-				<div className='flex justify-center items-center p-4 pb-8 h-5/6 bg-card-column w-72 aspect-auto border-dashed border-2 border-gray-400'>
+				<div className='flex justify-center items-center p-4 pb-8 h-5/6 bg-card-column w-72 border-dashed border-2 border-gray-400'>
 					<Button
 						variant='ghost'
 						className='flex gap-1 mt-3 h-full w-full text-center text-slate-500 hover:bg-transparent hover:text-secondary'>
